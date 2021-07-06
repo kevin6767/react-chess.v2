@@ -5,14 +5,12 @@ export const Square = ({
   piece,
                        }) => {
   return <div style={{
-    width: '100px',
-    height: '100px',
-    verticalAlign: 'center',
-    paddingTop: '25px'
+    width: '75px',
+    height: '75px',
   }}
   id={id}>
-    <div id={'pieceScale'}>
-    {piece && piece}
-    </div>
+    {piece && <div id={'pieceScale'}>
+      {piece}
+    </div>}
   </div>
 }
