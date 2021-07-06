@@ -1,0 +1,10 @@
+#white-tile {
+    background-color: rgb(227,193,111);
+}
+#black-tile {
+    background-color: rgb(184,139,74);
+}
+
+#pieceScale svg {
+    transform: scale(2);
+}
