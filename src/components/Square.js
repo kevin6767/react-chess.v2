@@ -9,7 +9,9 @@ export const Square = ({
     height: '75px',
   }}
   id={id}>
-    {piece && <div id={'pieceScale'}>
+    {piece && <div id={'pieceScale'} style={{
+      paddingTop: '15px'
+    }}>
       {piece}
     </div>}
   </div>

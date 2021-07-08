@@ -1,109 +1,6 @@
-import { Square } from '../components/Square'
-import { Pieces } from '../components/pieces/Pieces'
-import { useState } from 'react'
-
-export const startPos = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR'
+import { evaluator } from './evaluator'
+export const startPos = 'r1b1k1nr/p2p1pNp/n2B4/1p1NP2P/6P1/3P1Q2/P1P1K3/q5b1'
 export const startPosArr = [...startPos]
-
-
-function evaluator(pos, black, index) {
-
-  switch (pos) {
-    case 'r': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'r')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'n': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'n')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'b': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'b')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'q': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'q')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'k': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'k')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'p': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'p')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'R': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'R')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'N': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'N')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'B': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'B')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'Q': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'Q')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'K': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'K')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case 'P': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'P')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src
-      }}/>
-    }
-    case '1': {
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-      }}/>
-    }
-    default: {
-      break
-    }
-  }
-}
-
 
 export const FenStringEvaluation = ({
   board,
@@ -113,17 +10,19 @@ export const FenStringEvaluation = ({
                                     }) => {
 
   const correctFen = () => {
-    let newFenString = startPos.split('/').map(part => {
+    console.log(newFen.split(''))
+    let newFenString = newFen.split('').map(part => {
         if (+part >= 1 && +part <= 8) return "1".repeat(+part);
         return part;
-      }).join('/')
-    setNewFen([...newFenString])
+      }).join('')
+    setNewFen(newFenString)
     figureOutPos()
   }
+
   const figureOutPos = () => {
-    console.log(newFen)
+    let boardVisualizer = [...newFen]
     setBoard(
-      newFen.map((pos, index) => {
+      boardVisualizer.map((pos, index) => {
         let x = index % 7
         let y = Math.floor(index / 7)
         const black = (x + y) % 2 === 1
