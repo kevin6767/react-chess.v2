@@ -10,22 +10,23 @@ export const Board = ({
                         covered
 
                       }) => {
-  return board.length >= '64' && <div id={'chessboard'}>
-    {board.map((square, index) => {
-      let x = (index % 8) + 1
-      let y = Math.floor(index / 8) + 1
-      let position = [x, y]
-      let black = (x + y) % 2 === 1
-      square.position = position
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: square,
-        index,
-        position,
-        handleHover,
-        handleHoverExit,
-        covered
-      }}/>
+  return <div id={'chessboard'}>
+    {board.map((slice, i) => {
+      return slice.map((sqaure, j) => {
+        let x = (i % 8) + 1
+        let y = Math.floor(j % 8) + 1
+        let black = (i + j) % 2 === 0
+        return <Square {...{
+          id: black ? 'black-tile' : 'white-tile',
+          piece: sqaure,
+          handleHover,
+          handleHoverExit,
+          covered,
+          x,
+          y
+        }}/>
+      })
+
     })}
   </div>
 }

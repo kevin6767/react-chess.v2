@@ -14,17 +14,17 @@ export const GameController = () => {
   const [hovering, setHovering] = useState(false)
   const [covered, setCovered] = useState([])
 
-  const handleHover = (piece) => {
-    console.log(piece)
+  const handleHover = (piece, x, y, index) => {
     setHovering(true)
-    setCovered(board.filter(emptySqaures => emptySqaures.name === 'Blank Sqaure'
-      && emptySqaures.position !== piece.position))
+    calculateMovement(piece, x, y, index)
   }
 
   const handleHoverExit = (ev) => {
     setHovering(false)
-    setCovered([])
 
+  }
+  const calculateMovement = (piece, x , y, index) => {
+    console.log(piece)
   }
 
 
@@ -34,17 +34,18 @@ export const GameController = () => {
       return part;
     }).join('')
     setNewFen(newFenString)
-    let boardVisualizer = newFen.split('/').join('')
+    let boardVisualizer = newFen.split('/')
     createBoard(boardVisualizer)
   }
 
   const createBoard = (boardVisualizer) => {
-    let newBoardVisualizer = [...boardVisualizer]
-    let boardCreated = newBoardVisualizer.map((pos, index) => {
-      return convertPiece(pos, index)
+    let boardCreate = boardVisualizer.map((row, index) => {
+      return [...row].map((col, index) => {
+        return convertPiece(col, index)
+      })
     })
     setBoard(
-      boardCreated
+      boardCreate
     )
   }
 
@@ -58,8 +59,7 @@ export const GameController = () => {
   useEffect(() => {
     init()
   }, [newFen])
-
-  return board.length >= '64' ? <Board {...{
+  return board &&  <Board {...{
     board,
     setBoard,
     newFen,
@@ -68,5 +68,5 @@ export const GameController = () => {
     handleHover,
     handleHoverExit,
     covered
-  }}/> : null
+  }}/>
 }

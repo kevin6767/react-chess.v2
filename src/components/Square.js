@@ -8,7 +8,9 @@ export const Square = ({
                          handleHoverExit,
                          covered,
                          hover,
-                         position,
+  x,
+  y,
+  index,
                        }) => {
   return <div
     style={{
@@ -21,12 +23,11 @@ export const Square = ({
   >
     {
       <div
-      position={position}
       id={'pieceScale'}
       style={{
         paddingTop: '15px'
       }}
-      onMouseEnter={ev => handleHover(piece)}
+      onMouseEnter={ev => handleHover(piece, x, y, index)}
       onMouseLeave={ev => handleHoverExit(piece)}
       >
       {piece.src ? piece.src : ''}

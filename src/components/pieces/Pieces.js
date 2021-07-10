@@ -89,7 +89,10 @@ export const Pieces = [
     name: 'White Pawn',
     src: <WPawn />,
     fenString: 'P',
-    position: []
+    position: [],
+    xMovement: 0,
+    yMovement: 2,
+    xyMovement: 1,
 
   },
   {
