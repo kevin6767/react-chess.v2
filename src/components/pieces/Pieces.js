@@ -15,69 +15,88 @@ export const Pieces = [
   {
       name: 'Black King',
       src: <BKing />,
-      fenString: 'k'
+      fenString: 'k',
+      position: []
   },
   {
     name: 'BlackQueen',
       src: <BQueen />,
-      fenString: 'q'
+      fenString: 'q',
+    position: []
 
   },
   {
    name: 'BlackKnight',
       src: <BKnight />,
-      fenString: 'n'
+      fenString: 'n',
+    position: []
 
   },
   {
     name: 'BlackBishop',
       src: <BBishop />,
-      fenString: 'b'
+      fenString: 'b',
+    position: []
 
   },
   {
       src: <BRook />,
       fenString: 'r',
-      name: 'Black Rook'
+      name: 'Black Rook',
+    position: []
   },
   {
     name: 'BlackPawn',
       src: <BPawn />,
-      fenString: 'p'
+      fenString: 'p',
+    position: []
 
   },
   {
     name: 'White King',
     src: <WKing />,
-    fenString: 'K'
+    fenString: 'K',
+    position: []
   },
   {
     name: 'White Queen',
     src: <WQueen />,
-    fenString: 'Q'
+    fenString: 'Q',
+    position: []
 
   },
   {
     name: 'White Knight',
     src: <WKnight />,
-    fenString: 'N'
+    fenString: 'N',
+    position: []
 
   },
   {
     name: 'White Bishop',
     src: <WBishop />,
-    fenString: 'B'
+    fenString: 'B',
+    position: []
 
   },
   {
     src: <WRook />,
     fenString: 'R',
-    name: 'White Rook'
+    name: 'White Rook',
+    position: []
   },
   {
     name: 'White Pawn',
     src: <WPawn />,
-    fenString: 'P'
+    fenString: 'P',
+    position: []
+
+  },
+  {
+    name: 'Blank Sqaure',
+    src: '',
+    fenString: '1',
+    position: []
 
   },
 ]
