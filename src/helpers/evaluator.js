@@ -1,123 +1,55 @@
 import { Pieces } from '../components/pieces/Pieces'
 import { Square } from '../components/Square'
-
+import { ReactComponent as BKing } from '../assets/pieces/Chess_kdt45.svg'
+import { ReactComponent as BQueen } from '../assets/pieces/Chess_qdt45.svg'
+import { ReactComponent as BKnight } from '../assets/pieces/Chess_ndt45.svg'
+import { ReactComponent as BBishop } from '../assets/pieces/Chess_bdt45.svg'
+import { ReactComponent as BRook } from '../assets/pieces/Chess_rdt45.svg'
+import { ReactComponent as BPawn } from '../assets/pieces/Chess_pdt45.svg'
+import { ReactComponent as WKing } from '../assets/pieces/Chess_klt45.svg'
+import { ReactComponent as WQueen } from '../assets/pieces/Chess_qlt45.svg'
+import { ReactComponent as WKnight } from '../assets/pieces/Chess_nlt45.svg'
+import { ReactComponent as WBishop } from '../assets/pieces/Chess_blt45.svg'
+import { ReactComponent as WRook } from '../assets/pieces/Chess_rlt45.svg'
+import { ReactComponent as WPawn } from '../assets/pieces/Chess_plt45.svg'
 
 export function evaluator(pos, black, index, position, board) {
   switch (pos) {
     case 'r': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'r')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <BRook />
     }
     case 'n': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'n')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <BKnight />
     }
     case 'b': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'b')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <BBishop />
     }
     case 'q': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'q')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <BQueen />
     }
     case 'k': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'k')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <BKing />
     }
     case 'p': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'p')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <BPawn />
     }
     case 'R': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'R')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <WRook />
     }
     case 'N': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'N')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <WKnight />
     }
     case 'B': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'B')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <WBishop />
     }
     case 'Q': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'Q')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <WQueen />
     }
     case 'K': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'K')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
+      return <WKing />
     }
     case 'P': {
-      let foundPiece = Pieces.find((pos) => pos.fenString === 'P')
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        piece: foundPiece.src,
-        position,
-        board
-      }}/>
-    }
-    case '1': {
-      return <Square {...{
-        id: black ? 'black-tile' : 'white-tile',
-        position,
-        board
-      }}/>
+      return <WPawn />
     }
     case '/': {
       return

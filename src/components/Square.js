@@ -8,15 +8,15 @@ export const Square = ({
                          handleHoverExit,
                          covered,
                          hover,
-  x,
-  y,
-  index,
+                          x,
+                          y,
+                          index,
                        }) => {
   return <div
     style={{
       width: '75px',
       height: '75px',
-      borderStyle: covered.includes(piece) ? 'solid' : null,
+     // borderStyle: covered.includes(piece) ? 'solid' : null,
 
     }}
     id={id}
@@ -30,7 +30,7 @@ export const Square = ({
       onMouseEnter={ev => handleHover(piece, x, y, index)}
       onMouseLeave={ev => handleHoverExit(piece)}
       >
-      {piece.src ? piece.src : ''}
+      {piece ? piece : ''}
     </div>}
   </div>
 }

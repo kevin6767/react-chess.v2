@@ -1,6 +1,6 @@
 import { evaluator } from './evaluator'
 
-export const startPos = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR'
+export const startPos = 'r7/8/8/8/8/8/8/8'
 export const startPosArr = [...startPos]
 
 export const FenStringEvaluation = ({
